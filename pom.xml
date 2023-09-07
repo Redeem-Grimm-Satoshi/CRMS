@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <!-- Project from https://start.vaadin.com/project/ee6bfaab-e764-41c8-a5e6-6203d3f4eed7 -->
     <groupId>com.example.application</groupId>
-    <artifactId>flowcrmtutorial</artifactId>
+    <artifactId>CRMS</artifactId>
     <name>flowcrmtutorial</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
