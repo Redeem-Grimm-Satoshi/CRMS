@@ -71,8 +71,6 @@ public class ContactForm extends FormLayout {
 
         //cancel event
         cancel.addClickListener(e-> fireEvent(new CloseEvent(this)));
-
-
         cancel.addClickShortcut(Key.ESCAPE);
 
 

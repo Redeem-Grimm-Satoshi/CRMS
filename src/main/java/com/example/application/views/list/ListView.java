@@ -76,7 +76,7 @@ public class ListView extends VerticalLayout {
 
     private void configureForm() {
         form=new ContactForm(service.findCompany(),service.findStatus());
-        form.setWidth("20em");
+        form.setWidth("25em");
     }
 
     private Component getToolbar() {
