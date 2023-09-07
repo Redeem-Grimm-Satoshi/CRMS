@@ -25,7 +25,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 import java.util.Collections;
 
 
-@PageTitle("Contacts | Vaadin CRM")
+@PageTitle("Contacts")
 @Route(value = "")
 public class ListView extends VerticalLayout {
 
@@ -49,10 +49,17 @@ public class ListView extends VerticalLayout {
         add(getToolbar(),getContent());
         
         updateList();
+        closeEditor();
 
 
 
          }
+
+    private void closeEditor() {
+        form.setContact(null);
+        form.setVisible(false);
+        removeClassName("editing");
+    }
 
     private void updateList() {
         grid.setItems(service.findAllContact(filterText.getValue()));
@@ -69,7 +76,7 @@ public class ListView extends VerticalLayout {
 
     private void configureForm() {
         form=new ContactForm(service.findCompany(),service.findStatus());
-        form.setWidth("25em");
+        form.setWidth("20em");
     }
 
     private Component getToolbar() {
@@ -79,10 +86,18 @@ public class ListView extends VerticalLayout {
         filterText.addValueChangeListener(e->updateList());
 
         Button addButton=new Button("Add Contact");
+        addButton.addClickListener(e->addContact());
+
         HorizontalLayout toolBar=new HorizontalLayout(filterText,addButton);
         toolBar.addClassName("tool-bar");
 
         return toolBar;
+    }
+
+    private void addContact() {
+        grid.asSingleSelect().clear();
+        editContact(new Contact());
+
     }
 
     private void configureGrid(){
@@ -91,9 +106,24 @@ public class ListView extends VerticalLayout {
         grid.addColumn(contact -> contact.getStatus().getName()).setHeader("Status");
         grid.addColumn(contact -> contact.getCompany().getName()).setHeader("Company");
         grid.getColumns().forEach(col-> col.setAutoWidth(true));
+        grid.asSingleSelect().addValueChangeListener(e->editContact(e.getValue()));
 
 
 
          }
+
+    private void editContact(Contact contact) {
+        if(contact==null){
+            closeEditor();
+
+
+        }else{
+            form.setContact(contact);
+            form.setVisible(true);
+            addClassName("editing");
+
+        }
+
+    }
 
 }
