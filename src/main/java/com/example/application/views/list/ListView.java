@@ -76,8 +76,13 @@ public class ListView extends VerticalLayout {
 
     private void configureForm() {
         form=new ContactForm(service.findCompany(),service.findStatus());
-        form.setWidth("25em");
+        form.setWidth("20em");
+
+        //update comming soon
     }
+
+
+
 
     private Component getToolbar() {
         filterText.setPlaceholder("Filter by name...");
