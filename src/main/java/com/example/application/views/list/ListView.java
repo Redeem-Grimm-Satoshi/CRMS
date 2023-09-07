@@ -77,11 +77,23 @@ public class ListView extends VerticalLayout {
     private void configureForm() {
         form=new ContactForm(service.findCompany(),service.findStatus());
         form.setWidth("20em");
-
+        form.addSaveListener(this::saveContact);
+        form.addDeleteListener(this::deleteContact);
+        form.addCloseListener(e-> closeEditor());
         //update comming soon
     }
 
+    private void deleteContact(ContactForm.DeleteEvent deleteEvent) {
+        service.deleteContact(deleteEvent.getContact());
+        updateList();
+        closeEditor();
+    }
 
+    private void saveContact(ContactForm.SaveEvent saveEvent) {
+        service.saveContact(saveEvent.getContact());
+        updateList();
+        closeEditor();
+    }
 
 
     private Component getToolbar() {
