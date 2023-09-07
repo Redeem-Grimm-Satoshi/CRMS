@@ -65,7 +65,11 @@ public class ContactForm extends FormLayout {
         //validate and save
         save.addClickShortcut(Key.ENTER);
         save.addClickListener(e->validateAndSave());
+
+        //delete event
         delete.addClickListener(e->fireEvent(new DeleteEvent(this, contact)));
+
+        //cancel event
         cancel.addClickListener(e-> fireEvent(new CloseEvent(this)));
 
 
