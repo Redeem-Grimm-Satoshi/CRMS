@@ -26,7 +26,7 @@ import java.util.Collections;
 
 
 @PageTitle("Contacts")
-@Route(value = "")
+@Route(value = "", layout = MainLayout.class)
 public class ListView extends VerticalLayout {
 
 
