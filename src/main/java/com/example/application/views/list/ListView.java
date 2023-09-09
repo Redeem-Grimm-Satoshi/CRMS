@@ -26,7 +26,7 @@ import java.util.Collections;
 
 
 @PageTitle("Contacts")
-@Route(value = "")
+@Route(value = "", layout = MainLayout.class)
 public class ListView extends VerticalLayout {
 
 
@@ -45,9 +45,7 @@ public class ListView extends VerticalLayout {
         setSizeFull();
         configureGrid();
         configureForm();
-
         add(getToolbar(),getContent());
-        
         updateList();
         closeEditor();
 
@@ -77,7 +75,24 @@ public class ListView extends VerticalLayout {
     private void configureForm() {
         form=new ContactForm(service.findCompany(),service.findStatus());
         form.setWidth("20em");
+        form.addSaveListener(this::saveContact);
+        form.addDeleteListener(this::deleteContact);
+        form.addCloseListener(e-> closeEditor());
+        //update comming soon
     }
+
+    private void deleteContact(ContactForm.DeleteEvent deleteEvent) {
+        service.deleteContact(deleteEvent.getContact());
+        updateList();
+        closeEditor();
+    }
+
+    private void saveContact(ContactForm.SaveEvent saveEvent) {
+        service.saveContact(saveEvent.getContact());
+        updateList();
+        closeEditor();
+    }
+
 
     private Component getToolbar() {
         filterText.setPlaceholder("Filter by name...");
