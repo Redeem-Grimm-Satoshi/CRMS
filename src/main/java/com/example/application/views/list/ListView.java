@@ -45,9 +45,7 @@ public class ListView extends VerticalLayout {
         setSizeFull();
         configureGrid();
         configureForm();
-
         add(getToolbar(),getContent());
-        
         updateList();
         closeEditor();
 
