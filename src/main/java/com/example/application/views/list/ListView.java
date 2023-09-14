@@ -22,11 +22,14 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 import jakarta.annotation.security.PermitAll;
+import org.springframework.context.annotation.Scope;
 
 import java.util.Collections;
 
-
+@org.springframework.stereotype.Component
+@Scope("prototype")
 @PermitAll
+
 @PageTitle("Contacts")
 @Route(value = "", layout = MainLayout.class)
 public class ListView extends VerticalLayout {
