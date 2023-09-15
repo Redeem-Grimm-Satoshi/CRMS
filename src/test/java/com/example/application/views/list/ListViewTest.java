@@ -1,3 +1,6 @@
+/*
+
+
 package com.example.application.views.list;
 
 
@@ -31,3 +34,4 @@ ContactForm form=listView.form;
         return ((ListDataProvider<Contact>)grid.getDataProvider()).getItems().iterator().next();
     }
 }
+*/
