@@ -24,15 +24,14 @@ Once the JAR file is built, you can run it using
 - `themes` folder in `frontend/` contains the custom CSS styles.
 
 
-
-## Deploying using Docker
-
 To build the Dockerized version of the project, run
 
 ```
 mvn clean package -Pproduction
 docker build . -t crms:latest
 ```
+
+## Deploying using Docker
 
 Once the Docker image is correctly built, you can test it locally using
 
