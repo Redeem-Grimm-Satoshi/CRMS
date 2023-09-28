@@ -39,4 +39,4 @@ Once the Docker image is correctly built, you can test it locally using
 docker run -p 8080:8080 crms:latest
 ```
 
-NB: Can be deployed to Heroku and Other cloud providers
+NB: Can be deployed to Heroku and Other cloud providers for free
