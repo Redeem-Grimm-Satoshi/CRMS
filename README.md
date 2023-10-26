@@ -5,7 +5,7 @@
 ## Customer Relationship Management System ( CRMS )
 This CRMS is built using Java, Vaadin and SpringBoot Framework
 
-## Deploying to Production;
+## Deploying to Production
 
 To create a production build, call `mvnw clean package -Pproduction` (Windows),
 or `./mvnw clean package -Pproduction` (Mac & Linux).
