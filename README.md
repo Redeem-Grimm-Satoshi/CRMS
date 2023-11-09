@@ -3,7 +3,7 @@
 
 
 ## Customer Relationship Management System ( CRMS )
-This CRMS is built using Java, Vaadin and SpringBoot Framework
+This CRMS is built using Java, Vaadin and SpringBoot Framework.
 
 ## Deploying to Production
 
