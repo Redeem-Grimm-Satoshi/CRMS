@@ -2,6 +2,32 @@
 ![ui](https://github.com/Redeem-Grimm-Satoshi/CRMS/assets/45304978/9ea3030f-7d39-4a7b-859a-bd6077df644d)
 
 
+# Customer Relationship Management System (CRMS)
+
+The Customer Relationship Management System (CRMS) is a production-ready web application built with Java, Vaadin, and the Spring Boot framework. The application follows a clean, modular architecture with a clear separation between backend logic, frontend views, and theming. It is designed to be easily built, containerized, and deployed across local and cloud environments.
+
+---
+
+## Prerequisites
+
+Before running the application, ensure the following tools are installed on your system:
+
+- Java 17 or later  
+- Maven (or the included Maven Wrapper)  
+- Docker (optional, for containerized deployment)
+
+---
+
+## Local Installation and Setup
+
+Clone the repository and navigate into the project directory:
+
+```bash
+git clone <repository-url>
+cd crms
+
+
+
 ## Customer Relationship Management System ( CRMS )
 This CRMS is built using Java, Vaadin and SpringBoot Framework.
 
@@ -27,7 +53,7 @@ Once the JAR file is built, you can run it using
 To build the Dockerized version of the project, run
 
 ```
-mvn clean package -Pproduction
+mvn clean package -P production
 docker build . -t crms:latest
 ```
 
